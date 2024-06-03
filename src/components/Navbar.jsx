@@ -14,7 +14,7 @@ const Navbar = () => {
         </div>
         <div className="z-10 flex justify-center items-end h-[170px]">
           <a href="/">
-            <img src="https://s3-alpha-sig.figma.com/img/ead6/7870/f08b28526bae6d5474faf0a4799a99e4?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=n-bpDX7N9Ta8aJMDxrAq0UIoxwnFv8hckspvEyos1d~b3qx2WyZ-FhHj8T7nzZ~CaFYFyur4MJrtWDKumEeDLe~ytcMlnIgaQjMguxcc8lIxJrcQKfVJAAE2KbgG~GaGDyHTcepgMmi0tAZ0h5RIWceJmjM-BuL2yMfxknHpIzr1zDbJZi7lkTW0CwIeLtx3AwnIjIrzFZFdhtA4~L2shlISCtkMRTXif5IWM3StZHANzRHKbzaF7DQQJivEiBGFvESCDA4uPXJgpESuGlAuvmMIkh4vssYfZ4-RFkDigwaovM~9TZOESqLTEPW2YFEGcfCkF8VvUKoqhZnZv9XiMQ__" alt="Logo" className="h-[130px]" />
+            <img src="https://s3-alpha-sig.figma.com/img/ead6/7870/f08b28526bae6d5474faf0a4799a99e4?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MlpWVxlpRk0kpZWPZBWkaNwbIdZWUKeCvDba0RqCmEkmng9cNPmzmNhoTBG8pVIR5ebRsmrywb9~cHI9Jg3n3gfSBhKqnBYs64jy9mEVraC0EHRTwd~QooPYyJ4m31e9iAC7JMl9L0gFhRK8QZlp1ySXS0WrvvD-H3Vux7~FpSryTUlHt0OgjjR7WsokO~vTlHKUJYGmXQ~62Azu-nuk78-dd53oZlvR0pMmcYWsrhkdjZ~ybQIahaRRpcAy7zGUUesNcODJZNx12aQSk2z7YvxQvciWrY7qi84tlNa~Ohu5ww0ueFlfXZraYP~Y~z9UDVZVOrhBwJIe-GLUA3W3CA__" alt="Logo" className="h-[130px]" />
           </a>
         </div>
         <div className="space-x-4">

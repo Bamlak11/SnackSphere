@@ -17,6 +17,11 @@ const ShopPage = () => {
     'DISCOVERY PACKS',
   ];
 
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
+
   const sortingOptions = ['', 'Price: Low to High', 'Price: High to Low', 'Newest Arrivals'];
 
   // product data
@@ -35,96 +40,100 @@ const ShopPage = () => {
     { id: 12, name: 'COFFEE CUTTER COOKIES', price: '$12.99', image: 'https://s3-alpha-sig.figma.com/img/1bd9/892f/bcb8d85fb51a1dcb67619401f6c214ad?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MmVjpDTGYXREbiMxeHyabDLEcHwxUoBgmxBcQ8xwCn8JsXOF4bIVavMuLMD5mR4dfzFfeo8vCNsXv-FIBWG-smPU2DU5udeIkeOQN4adQOL5ff~gThiPlnlZUcOZGPWxgJUuRbhv3Ei50L0JjFuhAoI8QvCYzI4myHzdCgGGJVo~ngiE8SjKcs5M2cMk19F5GKKtud11ozZppKr8c9ohFbw1bGST-ta859VFWOPfCMOkXJmFAg4811a53VS5EdbIsy9XK24rWpfwkOSQWktIkkFrMQsLgnuhSATP7HeZUjzBCPpsZrpLXFvEBa9~jjGD5C7yVcpGuo3Xff8W7i0XNA__' },
   ];
 
-  const handleAddToCart = (productId) => {
-    console.log('Add to Cart clicked for product ID:', productId);
+  const handleAddToCart = (productName) => {
+    console.log('Add to Cart clicked for product Name:', productName);
   };
 
   return (
     <div>
-      <Navbar />
-      <div className='flex flex-col m-20'>
-        <h1 className='font-bold text-2xl mb-4'>SHOP</h1>
-        <p className='font-light'>Welcome! Here you will find all of the available products on <br />SnackSphere that should meet any and all of your snacking needs!</p>
-        <div className='flex space-x-10 m-4'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="19.5" fill="white" stroke="black" />
-            <text x="20" y="24" textAnchor="middle" fontSize="18" fill="black">V</text>
-          </svg>
-          <p className='flex items-center'>VEGAN</p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="19.5" fill="white" stroke="black" />
-            <text x="20" y="24" textAnchor="middle" fontSize="18" fill="black">GF</text>
-          </svg>
-          <p className='flex items-center'>GLUTEN FREE</p>
-        </div>
-        <div className='inline-flex items-start gap-[15px] space-x-2 my-8'>
+    <Navbar />
+    <div className='flex flex-col m-5 sm:m-10 lg:m-20'>
+      <h1 className='font-bold text-2xl mb-4'>SHOP</h1>
+      <p className='font-light'>Welcome! Here you will find all of the available products on <br />SnackSphere that should meet any and all of your snacking needs!</p>
+      <div className='flex space-x-5 sm:space-x-10 mt-4 mb-8'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="19.5" fill="white" stroke="black" />
+          <text x="20" y="24" textAnchor="middle" fontSize="14" fill="black">V</text>
+        </svg>
+        <p className='flex items-center'>VEGAN</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="19.5" fill="white" stroke="black" />
+          <text x="20" y="24" textAnchor="middle" fontSize="14" fill="black">GF</text>
+        </svg>
+        <p className='flex items-center'>GLUTEN FREE</p>
+      </div>
+      
+      <div className='flex flex-wrap gap-2 mt-4'>
           {tabs.map((tab) => (
             <p
               key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`flex items-center gap-10 rounded-full border p-2 px-4 cursor-pointer ${
-                activeTab === tab ? 'bg-[#d6d46d] border-[2px] border-black' : ''
+              onClick={() => handleTabClick(tab)}
+              className={`flex items-center px-3 py-1 rounded-full border cursor-pointer ${
+                activeTab === tab ? 'bg-[#d6d46d] border-black text-black' : 'bg-white border-gray-300 text-gray-700'
               }`}
             >
               {tab}
             </p>
           ))}
         </div>
-        
-        <div className='flex items-center'>
-          <p className='font-roboto'>SORT BY</p>
-          <div className='relative'>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className='ml-2 p-2 border border-black rounded-full w-7 h-7 text-center appearance-none bg-white'
-            >
-              {sortingOptions.map((option) => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </select>
-            <div className='pointer-events-none absolute top-[7px] right-[-2px] flex items-center px-2 text-gray-700'>
-              <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M19 9l-7 7-7-7'></path>
-              </svg>
-            </div>
+
+      
+      <div className='flex items-center'>
+        <p className='font-roboto'>SORT BY</p>
+        <div className='relative'>
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className='ml-2 p-2 border border-black rounded-full w-7 h-7 text-center appearance-none bg-white'
+          >
+            {sortingOptions.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+          <div className='pointer-events-none absolute top-[7px] right-[-2px] flex items-center px-2 text-gray-700'>
+            <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M19 9l-7 7-7-7'></path>
+            </svg>
           </div>
         </div>
+      </div>
 
-       {/* Product showcase */}
-       <div className='flex flex-wrap gap-8 mt-8'>
-          {products.map((product) => (
-            <div key={product.id} className='w-[205px] flex-shrink-0'>
-              <div className='relative overflow-hidden border border-black'>
-                <div
-                  className='w-full h-52 bg-cover bg-no-repeat'
-                  style={{ backgroundImage: `url(${product.image})` }}
-                ></div>
-              </div>
-
-              {/* product details */}
-              <div className='mt-2'>
-              <Link to={`/product/${product.id}`}>
-                  <h3 className='text-black font-roboto text-[20px] font-bold cursor-pointer'>{product.name}</h3>
-                </Link>
-              </div>
-
-              <div className='mt-1'>
-                <p className='w-[21.925px] h-[20.249px] text-[#787878]'>{product.price}</p>
-              </div>
-
-              <div className='mt-2'>
-                <button
-                  onClick={() => handleAddToCart(product.id)}
-                  className='flex items-center justify-center gap-2 px-4 py-2 rounded border-2 border-black bg-white'
-                  style={{ padding: '13px 15px' }}
-                >
-                  Add to Cart
-                </button>
-              </div>
+      {/* Product showcase */}
+      <div className='flex flex-wrap gap-5 sm:gap-8 mt-8'>
+        {products.map((product) => (
+          <div key={product.id} className='w-[45%] sm:w-[30%] md:w-[25%] lg:w-[20%] flex-shrink-0'>
+            <div className='relative overflow-hidden border border-black'>
+            <Link to={`/product/${product.id}`}>
+              <div
+                className='w-full h-52 bg-cover bg-no-repeat'
+                style={{ backgroundImage: `url(${product.image})` }}
+              ></div>
+              </Link>
             </div>
-          ))}
-        </div>
+
+            {/* product details */}
+            <div className='mt-2'>
+              <Link to={`/product/${product.id}`}>
+                <h3 className='text-black font-roboto text-lg sm:text-xl font-bold cursor-pointer'>{product.name}</h3>
+              </Link>
+            </div>
+
+            <div className='mt-1'>
+              <p className='w-[21.925px] h-[20.249px] text-[#787878]'>{product.price}</p>
+            </div>
+
+            <div className='mt-2'>
+              <button
+                onClick={() => handleAddToCart(product.name)}
+                className='flex items-center justify-center gap-2 px-4 py-2 rounded border-2 border-black bg-white'
+                style={{ padding: '13px 15px' }}
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
         <div className="flex justify-center mt-10">
           <button className="flex justify-center items-center gap-2 rounded-full border border-black bg-white py-3.5 px-8">
             <p>LOAD MORE</p>
