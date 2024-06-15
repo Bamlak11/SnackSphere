@@ -13,7 +13,7 @@ const Products = () => {
       Discover a variety of our flavors and snacks in one adventurous pack!
       </p>   
 
-      <div className="text-black text-center font-roboto font-light">
+      <div className="flex justify-center text-black text-center font-roboto font-light">
       
       <div className="m-6 overflow-x-auto">
           <div className="flex space-x-0 flex-nowrap">
@@ -40,16 +40,16 @@ const Products = () => {
           </div>
         </div>
 
+    </div>
       <div className="flex justify-center mt-6">
         
-          <button className="flex justify-center items-center gap-2 rounded-full border border-black bg-white py-3.5 px-6">
+          <button className="flex justify-center font-light items-center gap-2 rounded-full border border-black bg-white py-3.5 px-6">
           <a href="#best-sellers">
       <p>DISCOVER MORE</p>
     </a>
 
           </button>
         </div>
-    </div>
 
     <div id='best-sellers' className='mt-12'>
         <h2>BESTSELLERS</h2>
@@ -75,7 +75,7 @@ const Products = () => {
           </p>
           <div className="flex justify-center">
             <Link to="/about">
-              <button className="gap-2 mb-4 rounded-full font-normal border border-black bg-white p-2">
+              <button className="gap-2 mb-4 rounded-full font-light border border-black bg-white p-2">
                 LEARN MORE
               </button>
             </Link>
