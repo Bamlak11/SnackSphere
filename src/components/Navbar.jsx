@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,10 +27,11 @@ const Navbar = () => {
         <div className={`${
             showMenu ? 'flex' : 'hidden'
           } sm:flex flex-col sm:flex-row mt-4 sm:mt-0`}>
-          <a href="/shop" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">SHOP</a>
-          <a href="/about" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">ABOUT</a>
-          <a href="/contact" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">CONTACT</a>
+          <Link to="/shop" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">SHOP</Link>
+          <Link to="/about" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">ABOUT</Link>
+          <Link to="/contact" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">CONTACT</Link>
         </div>
+
       
 
         <div className={`z-10 flex justify-center h-[70px] ${showMenu ? 'hidden' : 'flex'}`}>
@@ -56,7 +58,7 @@ const Navbar = () => {
         <div className="space-x-4 hidden sm:flex">
           <a href="#search" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">SEARCH</a>
           <a href="#account" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">ACCOUNT</a>
-          <a href="/cart" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">CART</a>
+          <Link to="/cart" className="text-black hover:bg-gray-200 px-3 py-2 rounded-md">CART</Link>
         </div>
       </nav>
     </>

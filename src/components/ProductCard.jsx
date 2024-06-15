@@ -1,6 +1,13 @@
 import React from 'react';
 
-const ProductCard = ({addToCart, image, name, price }) => {
+const ProductCard = ({addToCart, image, name, price, showConfirmation }) => {
+  const CartConfirmation = () => {
+    return (
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-green-600 text-white text-center">
+        Item added to cart!
+      </div>
+    );
+  };
   
   return (
     <div className="max-w-sm rounded-sm shadow-xl space-x-2">
@@ -20,6 +27,7 @@ const ProductCard = ({addToCart, image, name, price }) => {
         <button onClick={() => addToCart(product.name)} className="bg-white flex justify-center items-center gap-2 border border-black px-4 py-3 rounded">
           Add to Cart
         </button>
+      {showConfirmation && <CartConfirmation />}
       </div>
       
     </div>
