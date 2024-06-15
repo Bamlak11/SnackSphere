@@ -1,10 +1,11 @@
 import React from 'react';
 
-const ProductCard = ({ image, name, price }) => {
+const ProductCard = ({addToCart, image, name, price }) => {
+  
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+    <div className="max-w-sm rounded-sm shadow-xl space-x-2">
       <div
-        className="w-52 h-52 flex-shrink-0 border border-black bg-lightgray bg-cover bg-no-repeat bg-center"
+        className="w-60 h-52 border border-black bg-lightgray bg-cover bg-center"
         style={{
           backgroundImage: `url(${image})`}}
       ></div>
@@ -16,7 +17,7 @@ const ProductCard = ({ image, name, price }) => {
         <p className="font-roboto text-gray-700 mb-2 w-[79px] text-[22px] font-light">
           ${price}
         </p>
-        <button className="bg-white flex justify-center items-center gap-2 border border-black px-4 py-3 rounded">
+        <button onClick={() => addToCart(product.name)} className="bg-white flex justify-center items-center gap-2 border border-black px-4 py-3 rounded">
           Add to Cart
         </button>
       </div>

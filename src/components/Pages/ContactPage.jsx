@@ -47,8 +47,8 @@ const ContactPage = () => {
                 <div className='flex space-x-6 items-center'>
                   <img
                     className='w-[50px]'
-                    src="https://s3-alpha-sig.figma.com/img/64a3/5f63/4d3d59a2d20adf94918b5ffce3ac7863?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HFMMt2cvpmOYOjSJldHPtytWkivleMWKnJg08PwYqvE4~w5re2RuFyR2Uk-ZGWHo1zy48NQ3jYoNbvTTConHg7e-06w5DNDwn4Wx-JySEGQwo4gq84DchoZi4GVm6Zlvukw0kWhIQ0YRtzEpEV-1xD116zUVvzEN3CL11knMRI736PBP9NiApNA1GoZxX5U~i4oAzt~Rarm3nq0JpZ0Jr9AAz8UmWoCQGPcmFzqyLOcTwdNYXc8SyBLEnFVPgc8-QzcDyYQbiKEZu-igrkQPSUtOl5MAeHbz6sZsFXfnlyrMU2FYY1d8d9niCRa~QYlMAO6KP9cX2qo1mw~DQY6gXA__"
-                    alt=""
+                    src="https://s3-alpha-sig.figma.com/img/64a3/5f63/4d3d59a2d20adf94918b5ffce3ac7863?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=e8ry1loOjDM-AjUlCBmpdOpl~xScV2KsugR94cBxurQAV7RxCKS~vXsH7xu0wHq7oAk7tvAjZmzjn34~vk~36bpN2pHb2XjdvChL430XTfnEumnooA7V8KRrgJs~nnWMuV4PRDToCwAyMRAQxvV50PsdUqD7wb3jTj3qeLE~U66Ts3g54GoL-lgDNxY8~ig8hdwWcu-JZxfRqWEIWsTdcPoBWEW1vUtIt2wkylrTellBRih3g0JNUf56vUA1b1i~ZgSvEQDjDV2ejH2giO3WAdt18RxxhHUJOUHaTMivMmU06Nh02d5bl1AI-pa2pBOV1Si7ASxvuzXypdsNMmg8oQ__"
+                    alt="Email"
                   />
                   <p>help@snacksphere.us</p>
                 </div>
@@ -56,8 +56,8 @@ const ContactPage = () => {
                 <div className='flex space-x-6 items-center'>
                   <img
                     className='w-[50px]'
-                    src="https://s3-alpha-sig.figma.com/img/f548/e6ee/1be2616ac0c7ba34443d5389c818b24b?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aBLBSau1syiokm752k1pDJZ1c-jEJlFnljXjeh4wQH2vbHQsBJH9anCPI1sOVGcv3yqgWc3BOsEh9R6N9hNZxzExqP4I63BXbjw274ABE14I0zuASOBWUEYOh4QeuoZ9gFFA6wHA35VoHuy8gBPdwOBU5r2kzLgKvn~hqD2sGfCZuxLs8bAoMy9ji2RnEvm7vKaycrwxv3M9XKD6YAtbwyXfE3nQH9HzgRd7BbAZyPCuNe7-Np1zVWqrF0kujbL35lAWAEU6oWAZiaO-UGLpuvWfw9ykhc2NCbbkZOpBLHJF~JBFbKuEaovF1hBdUn8~z3Ov~V59AXWqEAbk0wF5Xg__"
-                    alt=""
+                    src="https://s3-alpha-sig.figma.com/img/f548/e6ee/1be2616ac0c7ba34443d5389c818b24b?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mvlUj9Irm5pqNFF9eVYWZugpt-sEPcw~l23-pw-qn~os8fY~HYc056WVhlGbHIdw5UHKOF5IJKtoK9FgtSC1p7O3q7kKX8g3HS9xqedYpLWzfdOhwzdMdji9UwYYv9e6ByjSsZ8Fq8HwZrYWpRCTL9PXhI6V5PCQkQYzKX-KwGBiYU9uyBEYFcDdb~E9sfg2-JQdyY6vOMJNeWTp3sAlkJfmPLLJVRirz1Cr41Eu3nxHrsvNEgwBvr2SK9rE0PzJ8BpYeX1un8VviMMP-jMph8Qudes6J5rlimSHtLv7NWnmw-iU4KAwNm9gvrIifLAWABnezZEgvL~MRwJymneNWg__"
+                    alt="Phone"
                   />
                   <p>651-111-1111</p>
                 </div>
