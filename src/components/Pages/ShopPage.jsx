@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import { Link } from 'react-router-dom';
 
 
-const ShopPage = ({products, addToCart, removeFromCart, showConfirmation}) => {
+const ShopPage = ({products, addToCart, showConfirmation}) => {
   const [activeTab, setActiveTab] = useState('ALL');
   const [sortBy, setSortBy] = useState('Featured');
 

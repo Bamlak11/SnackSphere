@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
+  const [discountCode, setDiscountCode] = useState("");
+  const [appliedDiscount, setAppliedDiscount] = useState(0);
+
   const getTotalPrice = () => {
     return cart.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2);
+  };
+
+  const applyDiscount = () => {
+    // Here you can implement logic to check the validity of the discount code
+    // For simplicity, let's assume a hardcoded discount code "DISCOUNT10" for 10% off
+    if (discountCode === "FIRSTORDER15") {
+      // Apply 10% discount
+      const subtotal = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+      const discountAmount = subtotal * 0.15; // 15% discount
+      setAppliedDiscount(discountAmount);
+      console.log(`Applied a discount of ${discountAmount.toFixed(2)}`);
+    } else {
+      // Handle invalid discount code or display a message
+      alert("Invalid discount code. Please try again.");
+    }
+  };
+
+  const handleDiscountCodeChange = (e) => {
+    setDiscountCode(e.target.value);
   };
 
   console.log('Cart:', cart);
@@ -20,12 +42,12 @@ const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
             <p className="ml-4 text-xl font-semibold">SNACKSPHERE</p>
           </a>
         </div>
-        <a
-          href="/cart"
+        <Link
+          to="/cart"
           className="text-black font-semibold hover:bg-gray-200 px-3 py-2 rounded-md hidden sm:block"
         >
           CART
-        </a>
+        </Link>
       </nav>
 
       <div className="flex justify-center items-center flex-col">
@@ -52,37 +74,41 @@ const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
         <div className="flex flex-col w-full lg:w-[30%]">
           <h3 className="text-2xl font-semibold mb-4">Order Summary</h3>
           <div className="bg-[#F4DFB6] border border-black overflow-hidden">
-          <ul className="flex justify-center">
+          <ul className="overflow-x-auto">
             {cart.length === 0 ? (
               <li>Your cart is empty</li>
             ) : (
               cart.map((product) => (
-                <li key={product.id}>
-                <div className="flex-none w-20 h-20 mr-4">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                <li className="border border-black p-2" key={product.id}>
+                <div className="flex w-20 h-20 mr-4">
+                <img src={product.image} alt={product.name} className="w-full h-full object-cover border border-black" />
                   </div>
-                  <p>{product.name} - ${product.price} - Quantity: {product.quantity}</p>
-                  <button onClick={() => updateQuantity(product.id, 'increment')}>+</button>
-                  <button onClick={() => updateQuantity(product.id, 'decrement')}>-</button>
-                  <button onClick={() => removeFromCart(product)}>Remove</button>
+                  <p>{product.name} - {product.price} - Quantity: {product.quantity}</p>
+                  <div className="flex px-2 space-x-1">
+                  <button className="border border-black px-1" onClick={() => updateQuantity(product.id, 'increment')}>+</button>
+                  <button className="border border-black px-1"  onClick={() => updateQuantity(product.id, 'decrement')}>-</button>
+                  <button className="border border-black px-1"  onClick={() => removeFromCart(product)}>Remove</button>
+                  </div>
                 </li>
               ))
             )}
           </ul>
           <div className="m-4 flex flex-col">
-            <div className="flex flex-col">
-              <h3 className="text-lg">Discount Code:</h3>
-              <div className="flex items-center">
-                <input
-                  type="text"
-                  className="border border-black p-2 w-[250px]"
-                  placeholder="Enter discount code"
-                />
-                <button className="bg-black text-white py-[9.2px] px-4">
-                  APPLY
-                </button>
+              <div className="flex flex-col">
+                <h3 className="text-lg">Discount Code:</h3>
+                <div className="flex items-center">
+                  <input
+                    type="text"
+                    className="border border-black p-2 w-[250px]"
+                    placeholder="Enter discount code"
+                    value={discountCode}
+                    onChange={handleDiscountCodeChange}
+                  />
+                  <button className="bg-black text-white py-[9.2px] px-4" onClick={applyDiscount}>
+                    APPLY
+                  </button>
+                </div>
               </div>
-            </div>
             <div className="flex justify-between items-center font-semibold mt-2 border-t border-gray-600 pt-2">
               <p>SUBTOTAL:</p>
               <p>${getTotalPrice()}</p>
