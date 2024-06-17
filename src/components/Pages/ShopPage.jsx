@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import { Link } from 'react-router-dom';
 
 
-const ShopPage = ({products, addToCart, showConfirmation}) => {
+const ShopPage = ({ products, addToCart, showConfirmation}) => {
   const [activeTab, setActiveTab] = useState('ALL');
   const [sortBy, setSortBy] = useState('Featured');
 
@@ -121,7 +121,6 @@ const ShopPage = ({products, addToCart, showConfirmation}) => {
                 >
                   Add to Cart
                 </button>
-                {/* <button onClick={() => removeFromCart(product)} className='flex items-center justify-center gap-2 px-4 py-2 rounded border-2 border-black bg-white'>Remove from Cart</button> */}
               </div>
             </div>
           ))}

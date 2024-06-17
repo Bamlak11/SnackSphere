@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import mail from '../../assets/Mail.png'
+import phone from '../../assets/Phone.png'
 
 const ContactPage = () => {
   return (
@@ -47,7 +49,7 @@ const ContactPage = () => {
                 <div className='flex space-x-6 items-center'>
                   <img
                     className='w-[50px]'
-                    src="https://s3-alpha-sig.figma.com/img/64a3/5f63/4d3d59a2d20adf94918b5ffce3ac7863?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=e8ry1loOjDM-AjUlCBmpdOpl~xScV2KsugR94cBxurQAV7RxCKS~vXsH7xu0wHq7oAk7tvAjZmzjn34~vk~36bpN2pHb2XjdvChL430XTfnEumnooA7V8KRrgJs~nnWMuV4PRDToCwAyMRAQxvV50PsdUqD7wb3jTj3qeLE~U66Ts3g54GoL-lgDNxY8~ig8hdwWcu-JZxfRqWEIWsTdcPoBWEW1vUtIt2wkylrTellBRih3g0JNUf56vUA1b1i~ZgSvEQDjDV2ejH2giO3WAdt18RxxhHUJOUHaTMivMmU06Nh02d5bl1AI-pa2pBOV1Si7ASxvuzXypdsNMmg8oQ__"
+                    src={mail}
                     alt="Email"
                   />
                   <p>help@snacksphere.us</p>
@@ -56,7 +58,7 @@ const ContactPage = () => {
                 <div className='flex space-x-6 items-center'>
                   <img
                     className='w-[50px]'
-                    src="https://s3-alpha-sig.figma.com/img/f548/e6ee/1be2616ac0c7ba34443d5389c818b24b?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mvlUj9Irm5pqNFF9eVYWZugpt-sEPcw~l23-pw-qn~os8fY~HYc056WVhlGbHIdw5UHKOF5IJKtoK9FgtSC1p7O3q7kKX8g3HS9xqedYpLWzfdOhwzdMdji9UwYYv9e6ByjSsZ8Fq8HwZrYWpRCTL9PXhI6V5PCQkQYzKX-KwGBiYU9uyBEYFcDdb~E9sfg2-JQdyY6vOMJNeWTp3sAlkJfmPLLJVRirz1Cr41Eu3nxHrsvNEgwBvr2SK9rE0PzJ8BpYeX1un8VviMMP-jMph8Qudes6J5rlimSHtLv7NWnmw-iU4KAwNm9gvrIifLAWABnezZEgvL~MRwJymneNWg__"
+                    src={phone}
                     alt="Phone"
                   />
                   <p>651-111-1111</p>

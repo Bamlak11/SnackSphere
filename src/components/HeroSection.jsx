@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import heroimg1 from '../assets/heroimg1.png'
+import heroimg2 from '../assets/heroimg2.png'
+import heroimg3 from '../assets/heroimg3.png'
 
 const images = [
-  'https://s3-alpha-sig.figma.com/img/7301/d434/a0ae2b05c8d8da4b58e9c6fcc2f33b1d?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VBH9cFOWwZMeuMXUJY2MSU3YmwPe~vMFhAHDYzOHZqfj0yhHrCe2fCkS4r1TJiwLbCNsSkBEziWUwopfYHYJGNElI4S61wpZugNif0-3ty1XavdZTQOe963JeI~CT2mjiOC4gBvOufr~wsFc7QX7Fz91BqeQdoF8oFLQEsTnllJIX2vulK2UWTV4q6QHOTvoQOQkrPWsNbBWocIib0gsk1GaztUJk0hhfaoKcfQFDSbF8G6xkwDbt5ALMNgIDj93JWGKSssbv7hxP664b37vYm-xGpPsNghalB3ohjzN-vKZPAel-kbnVGEAh4k4IHxmJMxqzHxJe9aDp1RDJftYUA__',
-  'https://s3-alpha-sig.figma.com/img/f0c4/6f8c/dabbd963415286c194438e3e26ccbdc2?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VGbWgZ5hVSubBkhkgxokogDXACdLN6mJfvXWMkZzgH-pGYjxcDhCJm2BE1WRpi3IOtsWXPua69PA~uCCWC5v3SPrqz9yXts4y-pls8PVi7aL3b55kHEuZJfm1f8EsuF6T7PyMdb~7z9MgWXnkOcxsf5BL9~yi0V2A8F5RkPLNvgdVtWVsb2EpWn3dKeFOztspUMqOv4Cau4H0iOrTG0UthR53t4cVCAT-~WYsErKEaHUttNb1tsnsmVvJxFPpIN~nORRNVePsGsZSCP1vgHVpu0gLyEo4vYJLJlUHMiQZH2K9xNglFtJv7RJgAgXVn~LP8jDeovwrGl1jejqaXGzAA__',
-  'https://s3-alpha-sig.figma.com/img/949a/49f0/f148857cee3c2f0781d7643a14e03473?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TYbu5dN0Hxy-FdFaY0W~dgTcMQsDn4eiVBOtR-C3Ujnu-N3Q7aKNuWRUw5XgXJV4IveVkB2O8N~KFi9taD9avRtO6NZAPoQN9z-w195BMSEpSKXl4IVFVOUuhdz~tf-~ifQeSBiiQSEmYTqTgG-6aAAotm~8HNFV5l~Ms3fsqPWmJvw-aOb3KDCbGmAWs0s8BgBkMuGCV68e0lb~Zo6e93vRfKRv-QLRNaPqUNBp3vljtIOwUMVaE7N~zoeutSfYh~sN01t4DIjiL-F5qQdkl1Uvy0-rFksZ~i2~GrGS4SGwl0-juvb~T1zq4ASjfytfWZeGJ6780XKUsE~9lqHxiA__',
+ heroimg1 ,
+  heroimg2,
+  heroimg3,
 ];
 
 const content = [

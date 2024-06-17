@@ -5,15 +5,10 @@ const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
   const [discountCode, setDiscountCode] = useState("");
   const [appliedDiscount, setAppliedDiscount] = useState(0);
 
-  const getTotalPrice = () => {
-    return cart.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2);
-  };
 
   const applyDiscount = () => {
-    // Here you can implement logic to check the validity of the discount code
-    // For simplicity, let's assume a hardcoded discount code "DISCOUNT10" for 10% off
     if (discountCode === "FIRSTORDER15") {
-      // Apply 10% discount
+
       const subtotal = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
       const discountAmount = subtotal * 0.15; // 15% discount
       setAppliedDiscount(discountAmount);
@@ -28,7 +23,9 @@ const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
     setDiscountCode(e.target.value);
   };
 
-  console.log('Cart:', cart);
+   // Calculate the subtotal
+   const subtotal = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+
   return (
     <div className="font-roboto">
       <nav className="flex justify-between items-center py-4 px-6 bg-white shadow">
@@ -109,10 +106,21 @@ const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
                   </button>
                 </div>
               </div>
-            <div className="flex justify-between items-center font-semibold mt-2 border-t border-gray-600 pt-2">
-              <p>SUBTOTAL:</p>
-              <p>${getTotalPrice()}</p>
-            </div>
+              <div className="flex justify-between items-center font-semibold mt-2 border-t border-gray-600 pt-2">
+                <p>TOTAL:</p>
+                <p>${subtotal.toFixed(2)}</p> {/* Display the subtotal here */}
+              </div>
+              {appliedDiscount > 0 && (
+                <div className="flex justify-between items-center font-semibold mt-2">
+                  <p>DISCOUNT:</p>
+                  <p>-${appliedDiscount.toFixed(2)}</p> {/* Display the discount amount */}
+                </div>
+              )}
+              <div className="flex justify-between items-center font-semibold mt-2">
+                <p>SUBTOTAL:</p>
+                <p>${(subtotal - appliedDiscount).toFixed(2)}</p> {/* Display the total after discount */}
+              </div>
+
           </div>
 
         </div>
@@ -238,8 +246,8 @@ const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
           </button>
           <Link to="/shop" className="bg-white flex justify-center items-center font-semibold py-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" className="mr-2">
-  <path d="M13.227 3.687C13.3172 3.59153 13.3878 3.47923 13.4346 3.3565C13.4814 3.23377 13.5036 3.10302 13.4999 2.97172C13.4961 2.84042 13.4666 2.71113 13.4129 2.59125C13.3592 2.47136 13.2825 2.36322 13.187 2.273C13.0915 2.18279 12.9792 2.11226 12.8565 2.06544C12.7338 2.01863 12.603 1.99644 12.4717 2.00016C12.3404 2.00387 12.2111 2.03341 12.0912 2.08709C11.9714 2.14077 11.8632 2.21753 11.773 2.313L3.27301 11.313C3.09747 11.4987 2.99966 11.7445 2.99966 12C2.99966 12.2555 3.09747 12.5013 3.27301 12.687L11.773 21.688C11.8626 21.7856 11.9707 21.8643 12.0911 21.9198C12.2114 21.9752 12.3415 22.0062 12.4739 22.0109C12.6063 22.0156 12.7383 21.9939 12.8623 21.9472C12.9862 21.9004 13.0997 21.8295 13.196 21.7386C13.2923 21.6476 13.3696 21.5384 13.4234 21.4173C13.4771 21.2963 13.5063 21.1657 13.5092 21.0333C13.5121 20.9008 13.4886 20.7691 13.4402 20.6458C13.3917 20.5225 13.3193 20.4101 13.227 20.315L5.37501 12L13.227 3.687Z" fill="black"/>
-</svg>
+          <path d="M13.227 3.687C13.3172 3.59153 13.3878 3.47923 13.4346 3.3565C13.4814 3.23377 13.5036 3.10302 13.4999 2.97172C13.4961 2.84042 13.4666 2.71113 13.4129 2.59125C13.3592 2.47136 13.2825 2.36322 13.187 2.273C13.0915 2.18279 12.9792 2.11226 12.8565 2.06544C12.7338 2.01863 12.603 1.99644 12.4717 2.00016C12.3404 2.00387 12.2111 2.03341 12.0912 2.08709C11.9714 2.14077 11.8632 2.21753 11.773 2.313L3.27301 11.313C3.09747 11.4987 2.99966 11.7445 2.99966 12C2.99966 12.2555 3.09747 12.5013 3.27301 12.687L11.773 21.688C11.8626 21.7856 11.9707 21.8643 12.0911 21.9198C12.2114 21.9752 12.3415 22.0062 12.4739 22.0109C12.6063 22.0156 12.7383 21.9939 12.8623 21.9472C12.9862 21.9004 13.0997 21.8295 13.196 21.7386C13.2923 21.6476 13.3696 21.5384 13.4234 21.4173C13.4771 21.2963 13.5063 21.1657 13.5092 21.0333C13.5121 20.9008 13.4886 20.7691 13.4402 20.6458C13.3917 20.5225 13.3193 20.4101 13.227 20.315L5.37501 12L13.227 3.687Z" fill="black"/>
+        </svg>
             RETURN TO SHOP
           </Link>
         </div>
