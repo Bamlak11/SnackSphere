@@ -24,7 +24,7 @@ const ProductCard = ({addToCart, image, name, price, showConfirmation }) => {
         <p className="font-roboto text-gray-700 mb-2 w-[79px] text-[22px] font-light">
           ${price}
         </p>
-        <button onClick={() => addToCart(product.name)} className="bg-white flex justify-center items-center gap-2 border border-black px-4 py-3 rounded">
+        <button onClick={() => addToCart(product)} className="bg-white flex justify-center items-center gap-2 border border-black px-4 py-3 rounded">
           Add to Cart
         </button>
       {showConfirmation && <CartConfirmation />}

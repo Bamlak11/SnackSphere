@@ -61,7 +61,7 @@ const ProductPage = ({products, addToCart, showConfirmation}) => {
 
           <div className='mt-2 flex justify-center md:justify-center space-x-4'>
             <button
-              onClick={() => addToCart(product.name)}
+              onClick={() => addToCart(product)}
               className='flex items-center gap-2 px-4 py-2 rounded border-2 border-black bg-white'>
               Add to Cart
             </button>
