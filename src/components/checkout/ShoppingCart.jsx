@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import cartlogo from '../../assets/carticon.png'
 
 const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
   const [discountCode, setDiscountCode] = useState("");
@@ -30,14 +31,14 @@ const ShoppingCart = ({ cart, updateQuantity, removeFromCart }) => {
     <div className="font-roboto">
       <nav className="flex justify-between items-center py-4 px-6 bg-white shadow">
         <div className="flex items-center">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
-              src="https://s3-alpha-sig.figma.com/img/6c5f/a08a/a053cca3146629197ead7cf390a365b9?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Pcweu3iRFv3~cY~XGicen8pmmSOzlXupxIT5A1kjoJWj0yN0DB8Vo~DvU1bD5swlI-7X00135mD2jFho4QV~iVcT5UaL10ykoPZR1-4~AfOjN4bu-pWge3a3Czx~MdElubgd6FACqy6H2AoJJ3m1fOM2G-cs7JaG4LEMjFwlrHlw6HCiGEnvfEerdC7A7NzcpULAKC5ILZuWcF0zwuiUfeE0W8xlSPwg5Vi1-UMxdBY~cw8CfYkuC0TaWKrPhxXh6PMqfPdTrK5ima5MvN2DH~FQkBkF2bzEkz0yhgbe561puwiyOSMSvEb7tQHZvIChH6nXNzVlfgfH1z1COaALtg__"
+              src={cartlogo}
               alt="Logo"
-              className="h-[130px]"
+              className="h-[60px]"
             />
             <p className="ml-4 text-xl font-semibold">SNACKSPHERE</p>
-          </a>
+          </Link>
         </div>
         <Link
           to="/cart"
